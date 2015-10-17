@@ -1,0 +1,26 @@
+<h1> San Diego Zoo </h1>
+
+<% if @input.present? %>
+The Parrot says: <%= @input %>
+<hr>
+<% end %>
+
+<%= form_tag("/parrot", method: "get") do %>
+  <%= label_tag(:text, "Ask the Parrot!") %>
+  <%= text_field_tag(:text) %>
+  <%= submit_tag("GO") %>
+<% end %>
+<br>
+<br>
+
+<% if @response.present? %>
+The monkey says: hoo hoo hoo <%= @response %> hoo hoo hoo
+<hr>
+<% end %>
+
+
+<%= form_tag("/parrot", method: "get") do %>
+  <%= label_tag(:input, "Ask the Monkey!") %>
+  <%= text_field_tag(:input) %>
+  <%= submit_tag("GO") %>
+<% end %>
